@@ -1,6 +1,6 @@
 ---
 title: "Weekly Summary Template"
-author: "Author Name"
+author: "Brian Montagna"
 title-block-banner: true
 title-block-style: default
 toc: true
@@ -10,7 +10,7 @@ format: html
 
 ---
 
-## Tuesday, Jan 17
+## Tuesday, Feb 7
 
 ::: {.callout-important}
 ## TIL
@@ -19,31 +19,63 @@ Include a _very brief_ summary of what you learnt in this class here.
 
 Today, I learnt the following concepts in class:
 
-1. ? follow by the function name will bring up an R document with the complete use of the function. 
-1. You can create functions with X <- function(){}
-1. The line of best fit minimizes the residuals.
+1. 
+1. 
+1. 
 :::
 
 Provide more concrete details here. You can also use footenotes[^footnote] if you like
 
 For example: 
-in class we learnt we learnt about the `map` function from the `purrr` package. 
 
 
-```{R}
-X <- function(){ 
-  matrix(
-    c(1,2,3,4,5,6,7,8,9,1,2,3),
-    nrow = 3,
-    byrow = TRUE
-}
+
+$$
+y_i = \beta_0 + \beta_1 x_i + \epsilon_i 
+$$
+
+where 
+1. y_iis responsive
+1. x_i is covariate 
+1. epsilon is the error (vertical black line in lecture 4 notes)
+1. the betas are regression coeficients 
+i = 1,2 \dots, n$ are indicies for the obersvatives
+
+```{r}
+library(ggplot2)
+
+mtcars %>% head() %>% kable()
 ```
 
-```{R}
-X
+```{r}
+x <- mtcars$hp
+y <- mtcars$mpg 
+
+plot(x, y, pch=20, xlab="HP", ylab="MPG")
+
+model <- lm(y~x)
+summary(model)
 ```
 
-## Thursday, Jan 19
+simple regression models where $x$ and $y$ were both quantitative
+
+boxplot()
+
+even if $x$ is categorical you can still write down the regression model as follows:
+
+$$
+y_i = \beta_0 + \beta_1 x_i 
+$$
+
+where $x_i \in  \{ setosa,  \ versicolor,   \ virginica }$ 
+this means that we end up with, three different models:
+1. $y_i = \beta_0 + \beta_1 x_i = $'setosa'
+1. $y_i = \beta_0 + \beta_1 x_i = $'versicolor'
+1. $y_i = \beta_0 + \beta_1 x_i = $'virginica'
+
+
+
+## Thursday, Feb 9th
 
 
 
@@ -55,8 +87,8 @@ Include a _very brief_ summary of what you learnt in this class here.
 Today, I learnt the following concepts in class:
 
 1. When we see small p value them be reject the null hypothesis. 
-1. The function lm(), helps to find the least squares line
-1. Item 3
+1. The function lm(), helps to find the least squares line.
+1. The null hypothesis no linear relationship between x and y.
 :::
 
 Provide more concrete details here, e.g., 
