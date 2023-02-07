@@ -19,30 +19,29 @@ Include a _very brief_ summary of what you learnt in this class here.
 
 Today, I learnt the following concepts in class:
 
-1. Item 1
-1. Item 2
-1. Item 3
+1. ? follow by the function name will bring up an R document with the complete use of the function. 
+1. You can create functions with X <- function(){}
+1. The line of best fit minimizes the residuals.
 :::
 
 Provide more concrete details here. You can also use footenotes[^footnote] if you like
-
-```{R results='hide'}
-#| output: false
-library(dplyr)
-library(purrr)
-```
-
 
 For example: 
 in class we learnt we learnt about the `map` function from the `purrr` package. 
 
 
-```{R results='hide', fig.width=7, fig.height=7}
-par(mfrow=c(3, 3), mar=c(3.5, 3.5, 2, 1), mgp=c(2.4, 0.8, 0))
-map(1:9, function(i)rnorm(1000) %>% hist(., main=i, col=i))
+```{R}
+X <- function(){ 
+  matrix(
+    c(1,2,3,4,5,6,7,8,9,1,2,3),
+    nrow = 3,
+    byrow = TRUE
+}
 ```
 
-
+```{R}
+X
+```
 
 ## Thursday, Jan 19
 
@@ -55,8 +54,8 @@ Include a _very brief_ summary of what you learnt in this class here.
 
 Today, I learnt the following concepts in class:
 
-1. Item 1
-1. Item 2
+1. When we see small p value them be reject the null hypothesis. 
+1. The function lm(), helps to find the least squares line
 1. Item 3
 :::
 
@@ -64,12 +63,8 @@ Provide more concrete details here, e.g.,
 
 In class we learnt how to use the `map` function to create multiple regression diagnostic plots
 
-```{R results='hide', fig.height=4}
-par(mfcol=c(2, 3), mar=c(3.5, 3.5, 2, 1), mgp=c(2.4, 0.8, 0))
-mtcars %>%
-  split(.$cyl) %>%
-  map(~ lm(mpg ~ wt, data = .x)) %>%
-  map(function(x)plot(x, which=c(1, 2)))
+```{R}
+
 ```
 
 
